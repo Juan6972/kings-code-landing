@@ -1,0 +1,54 @@
+THE KING'S CODE — PÁGINA DE VSL (ENTREGA PARA AFILIADO)
+========================================================
+
+O QUE TEM AQUI
+--------------
+  index.html ..... a página completa (HTML único, CSS e JS embutidos)
+  garantia.png ... selo de garantia (deixe na MESMA pasta do index.html)
+
+COMO SUBIR
+----------
+Suba os 2 arquivos juntos, na mesma pasta, em qualquer hospedagem
+(servidor próprio, Vercel, Netlify, cPanel etc.). Não precisa de PHP
+nem banco de dados — é 100% estático.
+
+O QUE VOCÊ PRECISA EDITAR (3 coisas)
+------------------------------------
+Abra o index.html em qualquer editor de texto. Os 3 pontos estão
+marcados com comentários grandes — é só procurar pelo texto:
+
+1) LINK DE COMPRA
+   Procure por:  SEU_LINK_DE_COMPRA_AQUI
+   Aparece 3 vezes (os 3 botões da página). Use localizar/substituir
+   e troque pelo seu link de checkout/camuflado.
+
+2) EMBED DA VSL
+   Procure por:  [TROCAR AQUI: EMBED DA VSL]
+   São 2 blocos:
+     - Bloco 1 (no <head>): linhas de preload do player atual.
+       Troque pelas do seu player ou apague (é só otimização).
+     - Bloco 2 (no corpo): o player em si. Apague o
+       <vturb-smartplayer> + <script> e cole o embed do SEU vídeo.
+   ATENÇÃO: a revelação do pitch e o botão usam a tag
+   <vturb-smartplayer>, então o novo embed precisa ser VTurb.
+
+3) TEMPO DO PITCH
+   Procure por:  [TROCAR AQUI: TEMPO DO PITCH]
+   Edite a variável delaySeconds (em segundos de vídeo ASSISTIDO).
+   Ex.: pitch aos 20min30s -> delaySeconds = 1230
+   O conteúdo abaixo do vídeo (botão, preço, oferta) só aparece
+   quando o lead assiste até esse ponto. Se pausar, o contador para.
+
+PIXEL / RASTREAMENTO
+--------------------
+A página foi entregue SEM nenhum pixel ou rastreador. No <head> há um
+comentário "SEU PIXEL / RASTREAMENTO AQUI" — cole ali o seu Meta
+Pixel, UTMify, RedTrack etc.
+
+COMO FUNCIONA A PÁGINA (resumo)
+-------------------------------
+- Tudo abaixo do vídeo começa oculto (classe .hide no <main>).
+- O player VTurb revela o conteúdo no tempo configurado (persiste
+  entre visitas do mesmo navegador).
+- Quando o conteúdo é revelado, começa o timer de 15:00 (persiste
+  via localStorage) e a barra de "vagas" sobe sozinha até 70/72.
